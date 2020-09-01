@@ -1,0 +1,17 @@
+                                Installation & Project Setup
+
+Initial Project Setup
+    Tạm thời tắt phần mềm diệt virut và cài đặt project laravel
+        composer create-project --prefer-dist laravel/laravel scheduler
+        Để vào được trang web của dự án thì cần truy cập vào trong folder public, để có thể xóa
+        được public trên link url thì có thể dùng virtual host
+        <VirtualHost *:80>
+            ServerAdmin scheduler.xyz
+            DocumentRoot "C:/xampp/htdocs/scheduler/public"
+            ServerName scheduler.xyz
+            ErrorLog "logs/scheduler.xyz-error.log"
+            CustomLog "logs/scheduler.xyz-access.log" common
+        </VirtualHost>
+    - Remove public trên URL
+    C:\Windows\System32\drivers\etc -----------> hosts
+        127.0.0.1       scheduler.xyz
