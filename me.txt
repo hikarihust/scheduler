@@ -15,3 +15,14 @@ Initial Project Setup
     - Remove public trên URL
     C:\Windows\System32\drivers\etc -----------> hosts
         127.0.0.1       scheduler.xyz
+
+================================================================================================
+
+Creating our First Command and Intro
+    php artisan make:command SendTrafficEmailReport
+    Tạo 1 command
+        scheduler\app\Console\Commands\SendTrafficEmailReport.php
+            protected $signature = 'sendreport:name';
+    php artisan list
+    Tạo 1 command là inactive:users, với option là --command thì không cần sửa giá trị của signature
+    php artisan make:command DeleteInactiveUsers --command=inactive:users
