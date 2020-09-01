@@ -19,6 +19,7 @@ Initial Project Setup
 ================================================================================================
 
 Creating our First Command and Intro
+    https://viblo.asia/p/laravel-task-scheduling-Qbq5QrVEKD8
     php artisan make:command SendTrafficEmailReport
     Tạo 1 command
         scheduler\app\Console\Commands\SendTrafficEmailReport.php
@@ -26,3 +27,15 @@ Creating our First Command and Intro
     php artisan list
     Tạo 1 command là inactive:users, với option là --command thì không cần sửa giá trị của signature
     php artisan make:command DeleteInactiveUsers --command=inactive:users
+Setting Up our first Custom command
+    https://viblo.asia/p/thuc-hien-chuc-nang-gui-mail-trong-project-laravel-oOVlYLqoZ8W
+    https://mailtrap.io/
+        Login -> Demo inbox -> SMTP Settings
+    Integrations: Laravel
+    -> .env
+        MAIL_MAILER=smtp
+        MAIL_HOST=smtp.mailtrap.io
+        MAIL_PORT=2525
+        MAIL_USERNAME=******
+        MAIL_PASSWORD=******
+        MAIL_ENCRYPTION=tls

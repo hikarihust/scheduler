@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use DB;
 use Illuminate\Console\Command;
 
 class SendTrafficEmailReport extends Command
@@ -37,6 +38,8 @@ class SendTrafficEmailReport extends Command
      */
     public function handle()
     {
-        return 0;
+        $usersCount = \DB::table('users')
+            ->whereRaw('Date(created_at) = CURDATE()')
+            ->count();
     }
 }
