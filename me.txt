@@ -39,3 +39,29 @@ Setting Up our first Custom command
         MAIL_USERNAME=******
         MAIL_PASSWORD=******
         MAIL_ENCRYPTION=tls
+        MAIL_FROM_ADDRESS=vudinhquang222@gmail.com
+        MAIL_FROM_NAME="${APP_NAME}"
+SendTrafficEmailReport with Our Custom Command
+    Tạo class SendReport
+        php artisan make:mail SendReport
+    Tạo bảng
+        php artisan migrate
+    Thực thi câu lệnh để test
+        php artisan sendreport:name
+        -> Nội dung mail được gửi đi: This is the total amount of registered users today 0
+    Laravel7 ログイン画面作成(Login機能の実装)
+        １. laravel/uiをインストール
+            composer require laravel/ui
+        ２. LOGIN機能＆テーブル作成
+            php artisan ui vue --auth
+            php artisan migrate
+        ３. FrontEndに必要なPackageをインストール
+            npm install
+        ４. CSS/JSを作成ビルド
+            npm run dev
+    Vào trang Register để đăng ký 1 tài khoản
+        Name: quang
+        Email: vudinhquang@gmail.com
+    Thực thi lại câu lệnh để test
+        php artisan sendreport:name
+        -> Nội dung mail được gửi đi: This is the total amount of registered users today 1
