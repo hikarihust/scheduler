@@ -17,7 +17,10 @@ Initial Project Setup
         127.0.0.1       scheduler.xyz
 
 ================================================================================================
-
+https://viblo.asia/p/laravel-task-scheduling-Qbq5QrVEKD8
+https://viblo.asia/p/thuc-hien-chuc-nang-gui-mail-trong-project-laravel-oOVlYLqoZ8W
+https://mailtrap.io/
+https://viblo.asia/p/laravel-tinker-AoDKYNQDzvg
 Creating our First Command and Intro
     https://viblo.asia/p/laravel-task-scheduling-Qbq5QrVEKD8
     php artisan make:command SendTrafficEmailReport
@@ -65,3 +68,18 @@ SendTrafficEmailReport with Our Custom Command
     Thực thi lại câu lệnh để test
         php artisan sendreport:name
         -> Nội dung mail được gửi đi: This is the total amount of registered users today 1
+Deleting Inactive Users with Our Custom Command
+    https://viblo.asia/p/laravel-tinker-AoDKYNQDzvg
+    php artisan tinker(Để thoát Console tinker: exit;)
+        factory(App\User::class, 10)->create();
+        App\User::all();
+        App\User::count();
+    Thiết lập giá trị của timezone:
+        scheduler\config\app.php
+            'timezone' => 'UTC',
+        -> php artisan cache:clear
+           php artisan view:clear
+           php artisan config:clear
+        Logout rồi vào lại
+    Thực thi câu lệnh
+        php artisan inactive:users
